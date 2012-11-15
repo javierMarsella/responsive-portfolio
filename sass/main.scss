@@ -1,0 +1,553 @@
+@import "compass/reset";
+@import "compass/css3"; 
+
+/* Fonts */
+
+@font-face {
+    font-family: 'social';
+    src: url('../fonts/social_typography-webfont.eot');
+    src: url('../fonts/social_typography-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/social_typography-webfont.woff') format('woff'),
+         url('../fonts/social_typography-webfont.ttf') format('truetype'),
+         url('../fonts/social_typography-webfont.svg#social') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'LeagueGothicRegular';
+    src: url('../fonts/League_Gothic-webfont.eot');
+    src: url('../fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/League_Gothic-webfont.woff') format('woff'),
+         url('../fonts/League_Gothic-webfont.ttf') format('truetype'),
+         url('../fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/* Variables */
+
+$brown: #362224;
+$green: #7c9445;
+$green_light:#cbcc8b;
+$orange: #c77c39;
+$lime: #d4ce70;
+$cream: #dfd9bb;
+
+* {
+    -moz-box-sizing: border-box;
+}
+
+body {
+    background: url('../images/pattern.jpg') repeat;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1;
+    color:$brown;
+}
+
+header {
+	width: 100%;
+	text-align: center;
+	padding: 10px 0 18px 0;
+	overflow: hidden;
+	border-top:4px solid $brown;
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzk2OTk0ZiIgc3RvcC1vcGFjaXR5PSIwLjkiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2EyYTI1OSIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+	background: -moz-linear-gradient(top,  rgba(150,153,79,0.9) 0%, rgba(162,162,89,0.5) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(150,153,79,0.9)), color-stop(100%,rgba(162,162,89,0.5))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(150,153,79,0.9) 0%,rgba(162,162,89,0.5) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(150,153,79,0.9) 0%,rgba(162,162,89,0.5) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(150,153,79,0.9) 0%,rgba(162,162,89,0.5) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(150,153,79,0.9) 0%,rgba(162,162,89,0.5) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e696994f', endColorstr='#80a2a259',GradientType=0 ); /* IE6-8 */
+}
+
+header img{
+	margin:20px auto 10px;
+}
+
+h1, h2, h3 {
+	font-family:LeagueGothicRegular;
+	color:$brown;
+}
+
+h1{
+	font-size:60px;
+	line-height:76px;
+}
+
+h2{
+	font-size:40px;
+	line-height:56px;
+}
+
+hr{
+	color:transparent;
+	border-top:3px dashed $brown;
+	margin-left:30px;
+	position:relative;
+}
+
+hr.row{
+	margin:60px auto;
+}
+
+hr:before{
+	content:'';
+	display:block;
+	position:absolute;
+	z-index:9;
+	top:-13px;
+	left:-30px;
+	width:25px;
+	height:23px;
+	margin-right:10px;
+	background:url('../images/icons/scissors.png');
+
+}
+
+p{
+	padding-bottom:20px;
+}
+
+nav{
+	font-family:LeagueGothicRegular;
+	position:absolute;
+	z-index:999;
+	top:306px;
+	height: 60px;
+	font-size: 28px;
+	letter-spacing:1px;
+	width: 100%;
+	box-shadow:2px 8px 30px black;
+	text-align:center;
+	border-top:3px solid $brown;
+	border-bottom:1px solid $cream;
+	background:$brown;
+}
+
+nav:before, nav:after{
+	content:'';
+	display:block;
+	border-top:1px solid $cream;
+}
+
+nav:after{
+	content:'';
+	display:block;
+	border-top:3px solid $brown;
+}
+
+nav a{
+	text-decoration: none;
+	color: $cream;
+}
+
+nav a:hover, {
+	-moz-animation: over 0.3s ease-out forwards;
+}
+
+nav ul{
+	padding:14px 20px;
+}
+
+nav li{
+	display:inline;
+	position:relative;
+	padding:0 40px;
+	border-left:1px solid #5d4c46;
+	color:$cream;
+}
+
+nav li:first-child{
+	border:none;
+}
+
+nav li ul{
+	position:absolute;
+	top:45px;
+	left:0px;
+	min-width:100%;
+	padding:20px 0px;
+	background:$brown;
+	border-top:1px solid $green;
+	display:none;
+	font-size:25px;
+}
+nav li ul:before{
+    border-color: transparent transparent transparent $brown;
+    border-style: solid;
+    border-width: 50px;
+    border-left: 100px solid $brown;
+    bottom: -50px;
+    content: " ";
+    display: block;
+    position: absolute;
+
+}
+
+nav li ul:after{
+    border-color: transparent $brown transparent transparent ;
+    border-width: 50px;
+    border-style: solid;
+    border-right: 100px solid $brown;
+    bottom: -50px;
+    right:0px;
+    content: " ";
+    display: block;
+    position: absolute;
+
+}
+
+nav li ul li{
+	display: block;
+	border: none;
+	padding:0 40px 10px;
+}
+
+nav li ul li:before{
+	content:'j';
+	display:block;
+	text-align:center;
+	color:$green;
+	font-family:Nymphette;
+	font-size:15px;
+	padding:0 0 10px;
+}
+
+footer{
+	width:100%;
+	background:$brown;
+	border-top:3px solid $brown;
+	color:$cream;
+	padding-bottom:30px;
+}
+
+footer:before{
+	content:'';
+	display:block;
+	border-top:1px solid $cream
+}
+
+.relative{
+	position: relative;
+}
+
+#container{
+	padding-top:100px;
+}
+
+.fixed-top{
+	position:fixed;
+	top:0px;
+}
+
+.animacion{
+	width: 1024px;
+	margin: 0 auto;
+	height: 475px;
+	background: url('../images/frame1.jpg'); 
+	
+} 
+.animacion:hover{
+	-moz-animation: animar 1s forwards;
+}
+
+.parentesis {
+	font-family: LeagueGothicRegular;
+	font-size: 200px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	color:$brown;
+	display: none;
+}
+
+.parentesis:hover {
+	-moz-animation: over_brown 0.5s forwards; 
+}
+
+
+object{
+	opacity:.7;
+}
+
+.social-networks{
+	font-size: 100px;
+}
+
+.social-networks li{
+	display:inline-block;
+}
+
+.social-networks a {
+	color:$brown;
+	text-decoration: none;
+	line-height:106px;
+	opacity:0.6;
+}
+
+.social-networks a:hover, object:hover{
+	-moz-animation: opacity .4s linear forwards;
+}
+
+[data-icon]:before {
+    content: attr(data-icon);
+    font-family: social;
+}
+
+.screen-reader-text {
+    left: -9999px;
+    position: absolute;
+    top: -9999px;
+}
+
+
+
+#butler{
+	width:800px;
+	height:400px;
+	position:relative;
+	background:$green;
+}
+
+#bocadillo{
+	display:none;
+	width:300px;
+	height:200px;
+	border-radius:10px;	
+	background:$cream;
+	position:absolute;
+	z-index:9;
+	top:10px;
+	right:10px;
+	box-shadow:5px 5px 15px #000;
+}
+
+.panel{
+	border:2px solid $brown;
+	padding:20px;
+	position:relative;
+}
+
+.panel:before{
+    border-right: 1px solid $brown;
+    border-bottom: 1px solid $brown;
+    content: "";
+    display: block;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: 20px;
+    width: 20px;
+    background:$cream;
+}
+
+.panel:after{
+    border-left: 1px solid $brown;
+    border-bottom: 1px solid $brown;
+    content: "";
+    display: block;
+    height: 20px;
+    right: 20px;
+    position: absolute;
+    top: 20px;
+    width: 20px;
+    background:$cream;
+}
+
+.panel-grid{
+	border-color:$brown;
+	border-width:2px;
+}
+
+.border-fine{
+	border:1px solid $brown;
+	padding:30px 20px;
+}
+
+.border-fine:before{
+    border-right: 1px solid $brown;
+    border-top: 1px solid $brown;
+    content: "";
+    display: block;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    bottom: 20px;
+    width: 20px;
+    background:$cream;
+}
+
+.border-fine:after{
+    border-left: 1px solid $brown;
+    border-top: 1px solid $brown;
+    content: "";
+    display: block;
+    height: 20px;
+    right: 20px;
+    position: absolute;
+    bottom: 20px;
+    width: 20px;
+    background:$cream;
+}
+
+.border-fine.border-color{
+	border-color:$green;
+}
+
+.title-panel{
+	color:$brown;
+	font-size:40px;
+	line-height:60px;
+	text-align:center;
+	display:block;
+	font-family:Riesling;
+}
+
+.title-decoration{
+	color:$orange;
+	font-size:60px;
+	line-height:80px;
+	text-align:center;
+	display:block;
+	font-family:Riesling;
+}
+
+.title-decoration:before{
+	content:'';
+	display:block;
+	height:29px;
+	background:url('../images/diamonds.gif') no-repeat top center;
+	margin-bottom:10px;
+}
+
+.body-decoration, .body-panel{
+	font-weight:lighter;
+    letter-spacing:1px;
+    font-size:20px;
+    line-height:30px;
+}   
+
+.body-decoration strong{
+	color:$green;
+}
+
+.body-decoration:after{
+	content:'';
+	display:block;
+	height:29px;
+	background:url('../images/diamonds.gif') no-repeat top center;
+	margin-top:20px;
+}
+
+
+
+.images-grid li:nth-child(odd) .popover{
+	background:$green;
+}
+
+.images-grid li:nth-child(odd) .popover a{
+	color:$brown;
+}
+
+.popover{
+	background:$orange;
+	color:$cream;
+	opacity:.9;
+	padding:20px;
+}
+
+.popover strong{
+	font-family:LeagueGothicRegular;
+	font-size:35px;
+	line-height:50px;
+}
+
+.popover a{
+	color:$cream;
+	position:absolute;
+	bottom:20px;
+	right:16px;
+}
+
+.popover a:before{
+	content:'';
+	float: left;
+	border-left:7px solid $brown;
+	border-right:7px solid transparent;
+	border-top:7px solid transparent;
+	border-bottom:7px solid transparent;
+	margin-right:5px;
+}
+
+.images-grid li{
+	display:block;
+	float:left;
+	max-width:294px;
+	height:242px;
+	margin:5px 0;
+}
+
+.images-grid li img{
+	width:100%;
+}
+
+@media screen and (min-width: 929px) {
+
+	.images-grid li:nth-child(2), .images-grid li:nth-child(5), .images-grid li:nth-child(8){
+		margin:5px 10px;
+	 }
+	 .js-toggle{
+	 	display:none;
+	 }
+}
+
+@media screen and (min-width: 619px) and (max-width: 928px) {
+
+	.images-grid li:nth-child(2n){
+		margin:5px 10px;
+	 }
+	 .js-toggle{
+	 	display:none;
+	 }
+	 nav ul{
+	 	display:block;
+	 }
+
+}
+
+@media screen and (min-width: 300px) and (max-width: 618px) {
+
+	.images-grid li:nth-child(2n){
+		margin:5px auto;
+	 }
+	 nav ul{
+	 	font-size:24px;
+	 	display:none;
+	 	background:$brown;
+	 	opacity:.9;
+	 	clear:both;
+	 }
+	 nav ul li{
+	 	display:block;
+	 	border:none;
+	 	padding-top:30px;
+	 }
+	 nav ul li:first-child{
+	 	padding-top:none;
+	 	border:none;
+	 }
+	 .js-toggle{
+	 	display:block;
+	 	padding-top:14px;
+	 	text-transform:uppercase;
+	 }
+}
+
+
+
+
+
